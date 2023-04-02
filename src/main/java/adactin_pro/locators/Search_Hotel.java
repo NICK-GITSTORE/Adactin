@@ -30,10 +30,11 @@ public class Search_Hotel extends Base {
 
 	
 	@FindBy(id="hotels")
-	public WebElement Hot;
+	private WebElement Hot;
 	public WebElement getHot() {
 		return Hot;
 	}
+	
 	
 	@FindBy(xpath="(//select[@class='search_combobox'])[3]")
 	private WebElement rtyp;

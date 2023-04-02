@@ -59,9 +59,10 @@ public class Base {
     
     public static void Selecting(WebElement xx, String txt) {
     	Clicking(xx);
+    	
     	Select sl= new Select(xx);
     	sl.selectByVisibleText(txt);
-    	String att= xx.getAttribute("value");
+    	
     }
     
     public static boolean IsDis(WebElement id) {

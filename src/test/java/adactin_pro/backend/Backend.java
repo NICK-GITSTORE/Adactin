@@ -41,7 +41,7 @@ public class Backend extends Base{
 	    Clicking(ob.getlg().getLogin());
 	    
 	}
-	@Then("User close the Browser")
+	@Then("User Close the Browser")
 	public void user_close_the_browser() {
 		Waiting();
 		Closing();
@@ -70,6 +70,7 @@ public class Backend extends Base{
 	public void user_select_no_of_rooms(String string) {
 	    Selecting(ob.getSh().getNo_R(), string);
 	}
+	
 	@Then("User Enter Checkin Date {string}")
 	public void user_enter_checkin_date(String string) {
 	    Clearing(ob.getSh().getChc_in());
@@ -92,13 +93,13 @@ public class Backend extends Base{
 	}
 	
 
-	@Then("User Enter Adults Per Room {string}")
-	public void user_enter_adults_per_room(String string) {
-		Selecting(ob.getSh().getA_per(), string);
+	@Then("User Select Adults Per Room {string}")
+	public void user_select_adults_per_room(String string) {
+	    ob.getSh().getA_per().click();
 	}
-	@Then("User Enter Childrens Per Room {string}")
-	public void user_enter_childrens_per_room(String string) {
-		Selecting(ob.getSh().getC_per(), string);
+	@Then("User Select Childrens Per Room {string}")
+	public void user_select_childrens_per_room(String string) {
+	    ob.getSh().getC_per().click();
 	}
 	
 	@Then("User Verify Select Hotel page")
@@ -108,23 +109,23 @@ public class Backend extends Base{
 	
 	@Then("User Verify Hotel Name")
 	public void user_verify_hotel_name() {
-	  	  Assert.assertTrue(ob.getSlh().getVf_Hotel().getAttribute("value").equals("Hotel Creek"));
+	    Assert.assertTrue(ob.getSlh().getVf_Hotel().getAttribute("value").equalsIgnoreCase("hotel sunshine"));
 	}
 	  	  
 	@Then("User Verify Checkout date")
 	  public void user_verify_checkout_date() {
-	  		 Assert.assertTrue(ob.getSlh().getVf_Checkout().getAttribute("value").equals("29/03/2023"));
+	  		 Assert.assertTrue(ob.getSlh().getVf_Checkout().getAttribute("value").equals("10/04/2023"));
 	 }
 
 	
     @Then("User Verify Checkin date")
 	public void user_verify_checkin_date() {
-		Assert.assertTrue(ob.getSlh().getVf_Checkin().getAttribute("value").equals("27/03/2023"));
+		Assert.assertTrue(ob.getSlh().getVf_Checkin().getAttribute("value").equals("02/04/2023"));
 	}
     
     @Then("User Verify No of Rooms")
     public void user_verify_no_of_rooms() {
-        Assert.assertTrue(ob.getSlh().getVf_Room().getAttribute("value").equals("1 Rooms"));
+        Assert.assertTrue(ob.getSlh().getVf_Room().getAttribute("value").equals("2 Rooms"));
     }
     
     @Then("User Verify Room Type")
@@ -156,6 +157,75 @@ public class Backend extends Base{
        else
     	   System.out.println("not ok");
     }
+    
+    @Then("User Click Radio Button")
+    public void user_click_radio_button() {
+        ob.getSlh().getClick_Rad().click();
+    }
+    @Then("User Click Continue Button")
+    public void user_click_continue_button() {
+        ob.getSlh().getClick_Cont().click();
+    }
+    @Then("User Enter First Name {string}")
+    public void user_enter_first_name(String string) {
+       ob.getB_h().getFirst_nm().sendKeys(string);
+    }
+    @Then("User Enter Last Name {string}")
+    public void user_enter_last_name(String string) {
+       ob.getB_h().getLast_nm().sendKeys(string);
+    }
+    @Then("User Enter Billing Address {string}")
+    public void user_enter_billing_address(String string) {
+        ob.getB_h().getAddr().sendKeys(string);
+    }
+    @Then("User Enter Credit Card No {string}")
+    public void user_enter_credit_card_no(String string) {
+        ob.getB_h().getCc_no().sendKeys(string);
+    }
+    @Then("User Select Credit Card Type {string}")
+    public void user_select_credit_card_type(String string) {
+        Selecting(ob.getB_h().getCc_typ(), string);
+    }
+    @Then("User Select Expiry Month {string}")
+    public void user_select_expiry_month(String string) {
+        Selecting(ob.getB_h().getExp_mon(), string);
+    }
+    @Then("User Select Expiry Year {string}")
+    public void user_select_expiry_year(String string) {
+        Selecting(ob.getB_h().getExp_yr(), string);
+    }
+    @Then("User Enter CVV {string}")
+    public void user_enter_cvv(String string) {
+        ob.getB_h().getCvv().sendKeys("123");
+    }
+    
+    @Then("User Click Book Now")
+    public void user_click_book_now() {
+        ob.getB_h().getBook().click();
+    }
+    
+    @Then("User Click Logout")
+    public void user_click_logout() {
+       ob.getB_c().getL_out().click();
+    }
+    
+    @Then("User Verify Billed Price")
+    public void user_verify_billed_price() {
+       String c[] = ob.getB_h().getTot_Price().getAttribute("value").split(" ");
+       int tt= Integer.parseInt(c[2]);
+       
+       String b[]=ob.getB_h().getBill_Price().getAttribute("value").split(" ");
+       int ss= Integer.parseInt(b[2]);
+       
+       if(tt*110/100 == ss) {
+    	   System.out.println("Billed amount is 10% extra of Total price");
+       } else
+    	   System.out.println("Not verified");
+       
+    }
+
+   
+    
 }
 
 

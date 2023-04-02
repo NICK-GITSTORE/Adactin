@@ -9,8 +9,8 @@ import adactin_pro.base.Base;
 
 public class Login extends Base{
 	
-	public Login(WebDriver ab) {
-	this.nv=ab;
+	public Login(WebDriver lg) {
+	this.nv=lg;
 	PageFactory.initElements(nv,this);
 	
 	

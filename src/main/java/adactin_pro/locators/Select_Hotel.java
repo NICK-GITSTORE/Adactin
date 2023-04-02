@@ -20,25 +20,25 @@ public class Select_Hotel extends Base{
 		return Vf_Select_Hot;
 	}
 
-	@FindBy(xpath="(//input[@value='Hotel Creek'])[1]")
+	@FindBy(xpath="(//input[@onkeypress='return Nothingonly(event)'])[1]")
 	private WebElement Vf_Hotel;
 	public WebElement getVf_Hotel() {
 		return Vf_Hotel;
 	}
 	
-	@FindBy(xpath="(//input[@value='27/03/2023'])[1]")
+	@FindBy(xpath="(//input[@value='02/04/2023'])[1]")
 	private WebElement Vf_Checkin;
 	public WebElement getVf_Checkin() {
 		return Vf_Checkin;
 	}
 	
-	@FindBy(xpath="(//input[@value='29/03/2023'])[1]")
+	@FindBy(xpath="(//input[@value='10/04/2023'])[1]")
 	private WebElement Vf_Checkout;
 	public WebElement getVf_Checkout() {
 		return Vf_Checkout;
 	}
 	
-	@FindBy(xpath="(//input[@value='1 Rooms'])[1]")
+	@FindBy(xpath="(//input[@value='2 Rooms'])[1]")
 	private WebElement Vf_Room;
 	public WebElement getVf_Room() {
 		return Vf_Room;
@@ -50,19 +50,19 @@ public class Select_Hotel extends Base{
 		return Vf_Room_Type;
 	}
 	
-	@FindBy(xpath="//input[@value='AUD $ 260']")
+	@FindBy(xpath="(//input[@class='select_text'])[9]")
 	private WebElement Vf_Price;
 	public WebElement getVf_Price() {
 		return Vf_Price;
 	}
 	
-	@FindBy(xpath="//input[@value='2 Days']")
+	@FindBy(xpath="(//input[@class='select_text'])[6]")
 	private WebElement Vf_No_Days;
 	public WebElement getVf_No_Days() {
 		return Vf_No_Days;
 	}
 	
-	@FindBy(xpath="//input[@value='AUD $ 125']")
+	@FindBy(xpath="(//input[@class='select_text'])[8]")
 	private WebElement Vf_Per_Night;
 	public WebElement getVf_Per_Night() {
 		return Vf_Per_Night;

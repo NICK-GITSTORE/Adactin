@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import adactin_pro.base.Base;
+import adactin_pro.locators.Book_Confirm;
 import adactin_pro.locators.Book_Hot;
+import adactin_pro.locators.Book_Hotel;
 import adactin_pro.locators.Login;
 import adactin_pro.locators.Search_Hotel;
 import adactin_pro.locators.Select_Hotel;
@@ -32,8 +34,6 @@ public class POM extends Base {
 	}
 	
 	private Select_Hotel slh;
-	
-
 	public Select_Hotel getSlh() {
 		if(slh==null) {
 			slh= new Select_Hotel(nv);
@@ -41,13 +41,23 @@ public class POM extends Base {
 		return slh;
 	}
 	
-	private Book_Hot bh;
-	public Book_Hot getBh() {
-		if(bh==null) {
-			bh= new Book_Hot(nv);
+	private Book_Hotel b_h;
+	public Book_Hotel getB_h() {
+		if(b_h==null) {
+			b_h= new Book_Hotel(nv);
 		}
-		return bh;
+		return b_h;
 	}
+	
+	private Book_Confirm b_c;
+	
+	public Book_Confirm getB_c() {
+		if(b_c==null) {
+			b_c= new Book_Confirm(nv);
+		}
+		return b_c;
+	}
+	
 	
 	
 	
