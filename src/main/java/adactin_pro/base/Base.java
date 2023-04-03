@@ -20,11 +20,11 @@ public class Base {
 	public static void Launching(String dr) {
 		
 		if(dr.equalsIgnoreCase("chrome")) {
-		    System.setProperty("webdriver.chrome.driver", "C:\\NITHISH\\chromedriver_win32\\chromedriver.exe");
+		    System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\driver\\chromedriver.exe");
 		    nv = new ChromeDriver();
 		}
 		else if (dr.equalsIgnoreCase("edge")) {
-			System.setProperty("webdriver.edge.driver", "C:\\NITHISH\\edgedriver_win64\\msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", ".\\src\\test\\resources\\driver\\msedgedriver.exe");
 			nv= new EdgeDriver();
 		}
 		
