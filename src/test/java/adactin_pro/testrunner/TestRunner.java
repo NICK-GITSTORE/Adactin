@@ -7,8 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="C:\\Users\\Welcome\\eclipse-workspace\\Adactin_Pro\\src\\test\\java\\adactin.feature",
-glue = "adactin_pro.backend" ,tags="@TC-110", stepNotifications = true , dryRun=false,
-plugin="pretty")
+glue = "adactin_pro.backend" , stepNotifications = true , dryRun=false,
+plugin= { "pretty","html:target\\report\\adactin_report.html",
+		"json:target\\report\\adactin_report.json" } )
+
 public class TestRunner {
 	
 	

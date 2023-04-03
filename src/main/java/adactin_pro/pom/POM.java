@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import adactin_pro.base.Base;
 import adactin_pro.locators.Book_Confirm;
-import adactin_pro.locators.Book_Hot;
+
 import adactin_pro.locators.Book_Hotel;
 import adactin_pro.locators.Login;
 import adactin_pro.locators.Search_Hotel;
