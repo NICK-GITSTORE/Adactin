@@ -26,7 +26,7 @@ public class Select_Hotel extends Base{
 		return Vf_Hotel;
 	}
 	
-	@FindBy(xpath="(//input[@value='02/04/2023'])[1]")
+	@FindBy(xpath="(//input[@value='05/04/2023'])[1]")
 	private WebElement Vf_Checkin;
 	public WebElement getVf_Checkin() {
 		return Vf_Checkin;

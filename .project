@@ -31,16 +31,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/test/resources/adactin_pro/driver/chromedriver.exe</name>
-			<type>1</type>
-			<location>C:/NITHISH/chromedriver_win32/chromedriver.exe</location>
-		</link>
-		<link>
-			<name>src/test/resources/adactin_pro/driver/msedgedriver.exe</name>
-			<type>1</type>
-			<location>C:/NITHISH/edgedriver_win64/msedgedriver.exe</location>
-		</link>
-	</linkedResources>
 </projectDescription>

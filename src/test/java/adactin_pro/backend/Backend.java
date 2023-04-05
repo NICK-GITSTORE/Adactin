@@ -120,7 +120,7 @@ public class Backend extends Base{
 	
     @Then("User Verify Checkin date")
 	public void user_verify_checkin_date() {
-		Assert.assertTrue(ob.getSlh().getVf_Checkin().getAttribute("value").equals("02/04/2023"));
+		Assert.assertTrue(ob.getSlh().getVf_Checkin().getAttribute("value").equals("05/04/2023"));
 	}
     
     @Then("User Verify No of Rooms")
@@ -212,10 +212,10 @@ public class Backend extends Base{
     @Then("User Verify Billed Price")
     public void user_verify_billed_price() {
        String c[] = ob.getB_h().getTot_Price().getAttribute("value").split(" ");
-       int tt= Integer.parseInt(c[2]);
+       float tt= Float.parseFloat(c[2]);
        
        String b[]=ob.getB_h().getBill_Price().getAttribute("value").split(" ");
-       int ss= Integer.parseInt(b[2]);
+       float ss= Float.parseFloat(b[2]);
        
        if(tt*110/100 == ss) {
     	   System.out.println("Billed amount is 10% extra of Total price");

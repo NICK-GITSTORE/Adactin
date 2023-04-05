@@ -9,13 +9,13 @@ Then Click Login Button
 Then User Verify logedin Page 
 
 
-@TC-101
+@TC-101  @tag01
 Scenario: Login-Verification
-
 
 Then User Close the Browser
 
-@TC-102
+
+@TC-102 @tag02
 Scenario: Search Hotel - Wrong Checkin and Checkout
 
 And User Select Location "Sydney"
@@ -26,7 +26,7 @@ Then User Enter Checkin Date "01/04/2023"
 Then User Enter Checkout Date "30/03/2023"
 And User Click the Search Button
 Then User Verify Error Message
-Then User Close the Browser
+
 
 @TC-103
 Scenario: Search Hotel - Checkout before today
@@ -38,7 +38,7 @@ And User Select No of rooms "1 - One"
 Then User Enter Checkout Date "22/03/2023"
 And User Click the Search Button
 Then User Verify Error Message
-Then User Close the Browser
+
 
 @TC-104
 Scenario: Select Hotel -Verification
@@ -58,7 +58,7 @@ Then User Verify Checkout date
 Then User Verify No of Rooms
 Then User Verify Room Type
 Then User Verify Price
-Then User Close the Browser
+
 
 
 @TC-105
@@ -91,9 +91,9 @@ And User Select Expiry Year "2022"
 Then User Enter CVV "123"
 Then User Click Book Now
 Then User Click Logout
-Then User Close the Browser
 
-@TC-110
+
+@TC-110 @tag02
 Scenario: Final billed price _Verfification
 
 And User Select Location "Sydney"

@@ -11,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import dev.failsafe.internal.util.Assert;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 	
@@ -20,11 +21,13 @@ public class Base {
 	public static void Launching(String dr) {
 		
 		if(dr.equalsIgnoreCase("chrome")) {
-		    System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\driver\\chromedriver.exe");
+//		    System.setProperty("webdriver.chrome.driver", "C:\\NITHISH\\chromedriver_win32\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 		    nv = new ChromeDriver();
 		}
 		else if (dr.equalsIgnoreCase("edge")) {
-			System.setProperty("webdriver.edge.driver", ".\\src\\test\\resources\\driver\\msedgedriver.exe");
+//			System.setProperty("webdriver.edge.driver", "C:\\NITHISH\\edgedriver_win64\\msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			nv= new EdgeDriver();
 		}
 		
