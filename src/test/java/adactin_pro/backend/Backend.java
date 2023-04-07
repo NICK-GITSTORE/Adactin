@@ -2,7 +2,11 @@ package adactin_pro.backend;
 
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.junit.Assert;
+
 
 import adactin_pro.base.Base;
 import adactin_pro.locators.Login;
@@ -16,24 +20,24 @@ public class Backend extends Base{
     POM ob= new POM(nv);
     
 	@Given("User Launch Browser {string}")
-	public void user_launch_browser(String string) {
-	    Launching(string);
+	public void user_launch_browser(String string)  {
+	    Launching(Prop_Read(string));
 	}
 	@Given("User Navigate to Url {string}")
-	public void user_navigate_to_url(String string) {
-	    Opening(string);
+	public void user_navigate_to_url(String string)  {
+	    Opening(Prop_Read(string));
 	    
 	}
 	
 	
 	@Then("User Enter UserName {string}")
-	public void user_enter_user_name(String string) {
-	    Sending(ob.getlg().getUser(),string);
+	public void user_enter_user_name(String string)  {
+	    Sending(ob.getlg().getUser(),Prop_Read(string));
 	    
 	}
 	@Then("User Enter Password {string}")
 	public void user_enter_password(String string) {
-	    Sending(ob.getlg().getPass(), string);
+	    Sending(ob.getlg().getPass(), Prop_Read(string));
 	    
 	}
 	@Then("Click Login Button")
@@ -55,33 +59,36 @@ public class Backend extends Base{
 	}
 	@Then("User Select Location {string}")
 	public void user_select_location(String string) {
-	   Selecting(ob.getSh().getLoc(), string);
+	   Selecting(ob.getSh().getLoc(), Prop_Read(string));
 	}
 	@Then("User Select Hotel {string}")
 	public void user_select_hotel(String string) {
-	  Selecting(ob.getSh().getHot(), string);
+	  Selecting(ob.getSh().getHot(), Prop_Read(string));
 	}
 
 	@Then("User Select Roomtype {string}")
 	public void user_select_roomtype(String string) {
-	    Selecting(ob.getSh().getRtyp(), string);
+	    Selecting(ob.getSh().getRtyp(), Prop_Read(string));
 	}
 	@Then("User Select No of rooms {string}")
 	public void user_select_no_of_rooms(String string) {
-	    Selecting(ob.getSh().getNo_R(), string);
+	    Selecting(ob.getSh().getNo_R(), Prop_Read(string));
 	}
 	
 	@Then("User Enter Checkin Date {string}")
 	public void user_enter_checkin_date(String string) {
 	    Clearing(ob.getSh().getChc_in());
 	    Waiting();
-		Sending(ob.getSh().getChc_in(), string);
+		Sending(ob.getSh().getChc_in(), Prop_Read(string));
+		
 	}
 	@Then("User Enter Checkout Date {string}")
 	public void user_enter_checkout_date(String string) {
 		Clearing(ob.getSh().getChc_Outl());
 		Waiting();
-	    Sending(ob.getSh().getChc_Outl(), string);
+	    Sending(ob.getSh().getChc_Outl(), Prop_Read(string));
+	    
+		
 	}
 	@Then("User Click the Search Button")
 	public void user_click_the_search_button() {
@@ -107,30 +114,32 @@ public class Backend extends Base{
 	    Assert.assertTrue(IsDis(ob.getSlh().getVf_Select_Hot()));
 	}
 	
-	@Then("User Verify Hotel Name")
-	public void user_verify_hotel_name() {
-	    Assert.assertTrue(ob.getSlh().getVf_Hotel().getAttribute("value").equalsIgnoreCase("hotel sunshine"));
+	@Then("User Verify Hotel Name {string}")
+	public void user_verify_hotel_name(String string) {
+		
+	    Assert.assertTrue(ob.getSlh().getVf_Hotel().getAttribute("value").equalsIgnoreCase(Prop_Read(string)));
 	}
 	  	  
-	@Then("User Verify Checkout date")
-	  public void user_verify_checkout_date() {
-	  		 Assert.assertTrue(ob.getSlh().getVf_Checkout().getAttribute("value").equals("10/04/2023"));
+	@Then("User Verify Checkout date {string}")
+	public void user_verify_checkout_date(String string) {
+	  		 Assert.assertTrue(ob.getSlh().getVf_Checkout().getAttribute("value").equals(Prop_Read(string)));
 	 }
 
 	
-    @Then("User Verify Checkin date")
-	public void user_verify_checkin_date() {
-		Assert.assertTrue(ob.getSlh().getVf_Checkin().getAttribute("value").equals("05/04/2023"));
+	@Then("User Verify Checkin date {string}")
+	public void user_verify_checkin_date(String string) {
+		Assert.assertEquals(ob.getSlh().getVf_Checkin().getAttribute("value"),(Prop_Read(string))); 
+		
 	}
     
-    @Then("User Verify No of Rooms")
-    public void user_verify_no_of_rooms() {
-        Assert.assertTrue(ob.getSlh().getVf_Room().getAttribute("value").equals("2 Rooms"));
+	@Then("User Verify No of Rooms {string}")
+	public void user_verify_no_of_rooms(String string) {
+        Assert.assertTrue(ob.getSlh().getVf_Room().getAttribute("value").equals(Prop_Read(string)));
     }
     
-    @Then("User Verify Room Type")
-    public void user_verify_room_type() {
-      Assert.assertTrue(ob.getSlh().getVf_Room_Type().getAttribute("value").equals("Standard"));
+	@Then("User Verify Room Type {string}")
+	public void user_verify_room_type(String string) {
+      Assert.assertTrue(ob.getSlh().getVf_Room_Type().getAttribute("value").equals(Prop_Read(string)));
 
 }
     @Then("User Verify Price")

@@ -13,7 +13,7 @@ stepNotifications = true ,
 dryRun=false, 
 monochrome = true,
 publish = true,
-tags="@tag02",
+tags="@TC-104",
 plugin= { "pretty","html:target\\report\\adactin_report.html",
 		"json:target\\report\\adactin_report.json",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"} 

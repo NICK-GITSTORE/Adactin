@@ -2,6 +2,10 @@ package adactin_pro.base;
 
 
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -10,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import dev.failsafe.internal.util.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
@@ -80,14 +83,22 @@ public class Base {
     	
     }
     
-//    public static void Verifying(WebElement xx, String yy) {
-//    	if(xx.getAttribute("value").equals(yy)) {
-//  	  		   System.out.println("hotel name verified as we searched"); 
-//  	  	   }
-//  	  	   else {
-//  	  		   System.out.println("not verifiede");
-//  	       }	
-//    		
+    public static String Prop_Read(String key)  {
+    	
+    	String path=".\\src\\test\\resources\\propertyfile\\PP.properties";
+    	String pp=null;
+    	try {
+			FileReader fr= new FileReader(path);
+			Properties prop= new Properties();
+			prop.load(fr);
+				pp = prop.getProperty(key);
+				
+				
+		} catch (Exception e) {
+			
+		}
+    	return pp;
+    }
     		
    
     }

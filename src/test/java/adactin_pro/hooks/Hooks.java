@@ -28,7 +28,7 @@ public class Hooks extends Base {
 		
 		
 		System.out.println("THE END");
-		Quitting();
+		
 		
 
 	}

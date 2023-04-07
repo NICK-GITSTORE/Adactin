@@ -26,25 +26,25 @@ public class Select_Hotel extends Base{
 		return Vf_Hotel;
 	}
 	
-	@FindBy(xpath="(//input[@value='05/04/2023'])[1]")
+	@FindBy(xpath="(//input[@class='select_text'])[4]")
 	private WebElement Vf_Checkin;
 	public WebElement getVf_Checkin() {
 		return Vf_Checkin;
 	}
 	
-	@FindBy(xpath="(//input[@value='10/04/2023'])[1]")
+	@FindBy(xpath="(//input[@class='select_text'])[5]")
 	private WebElement Vf_Checkout;
 	public WebElement getVf_Checkout() {
 		return Vf_Checkout;
 	}
 	
-	@FindBy(xpath="(//input[@value='2 Rooms'])[1]")
+	@FindBy(xpath="(//input[@class='select_text'])[3]")
 	private WebElement Vf_Room;
 	public WebElement getVf_Room() {
 		return Vf_Room;
 	}
 	
-	@FindBy(xpath="(//input[@value='Standard'])[1]")
+	@FindBy(xpath="(//input[@class='select_text'])[7]")
 	private WebElement Vf_Room_Type;
 	public WebElement getVf_Room_Type() {
 		return Vf_Room_Type;

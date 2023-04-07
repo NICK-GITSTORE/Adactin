@@ -14,7 +14,7 @@ public class Search_Hotel extends Base {
 		PageFactory.initElements(nv, this);
 	}
 
-	@FindBy(xpath="//td[text()='Search Hotel ']")
+	@FindBy(xpath="//td[@class='login_title']")
 	private WebElement vf_Loged;
 	public WebElement getVf_Loged() {
 		return vf_Loged;
